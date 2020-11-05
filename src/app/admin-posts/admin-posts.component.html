@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <a class="navbar-brand" href="#">
+        Generic Brand
+      </a>
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" (click)="ban()">
+              <span data-feather="home"></span>
+              Ban
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="verf()">
+              <span data-feather="file"></span>
+              Verification
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="member()">
+              <span data-feather="shopping-cart"></span>
+              Memberships
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="coach()">
+              <span data-feather="users"></span>
+              add Coach
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="feedback()">
+              <span data-feather="bar-chart-2"></span>
+              feedback
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" (click)="post()">
+              <span data-feather="layers"></span>
+              all posts <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="report()">
+              <span data-feather="layers"></span>
+              reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="adTree()">
+              <span data-feather="layers"></span>
+              add trees
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goback()">
+              <span data-feather="layers"></span>
+              disconnect
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="companies-container" style="margin-left: 350px;">
+      <div class="card" style="width: 18rem;" *ngFor="let element of posts">
+        <img
+          class="card-img-top"
+          src="{{this.element?.image}}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{this.element?.title}}</h5>
+          <p class="card-text">{{this.element?.description}}</p>
+          <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span
+            ><span>☆</span>
+          </div>
+          <a class="btn btn-primary" (click)="seeMore(this.element)">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

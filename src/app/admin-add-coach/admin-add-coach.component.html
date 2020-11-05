@@ -1,0 +1,144 @@
+<div class="container-fluid" style="margin-left: 400px;">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <a class="navbar-brand" href="#">
+        Generic Brand
+      </a>
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" (click)="ban()">
+              <span data-feather="home"></span>
+              Ban
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="verf()">
+              <span data-feather="file"></span>
+              Verification
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="member()">
+              <span data-feather="shopping-cart"></span>
+              Memberships
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" (click)="coach()">
+              <span data-feather="users"></span>
+              add Coach <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="feedback()">
+              <span data-feather="bar-chart-2"></span>
+              feedback
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="post()">
+              <span data-feather="layers"></span>
+              all posts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="report()">
+              <span data-feather="layers"></span>
+              reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="adTree()">
+              <span data-feather="layers"></span>
+              add trees
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goback()">
+              <span data-feather="layers"></span>
+              disconnect
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Fullname</label>
+        <input
+          #fullName
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">image</label>
+        <input
+          #image
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          #email
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">diploma</label>
+        <input
+          #diplome
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">experience</label>
+        <input
+          #experience
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">about</label>
+        <input
+          #about
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Contact</label>
+        <input
+          #number
+          type="number"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="addCoach(fullName.value, image.value, email.value, diplome.value, experience.value, about.value, number.value)"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

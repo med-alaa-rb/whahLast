@@ -1,0 +1,114 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <a class="navbar-brand" href="#">
+        Generic Brand
+      </a>
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" (click)="ban()">
+              <span data-feather="home"></span>
+              Ban
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="verf()">
+              <span data-feather="file"></span>
+              Verification
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" (click)="member()">
+              <span data-feather="shopping-cart"></span>
+              Memberships <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="coach()">
+              <span data-feather="users"></span>
+              add Coach
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="feedback()">
+              <span data-feather="bar-chart-2"></span>
+              feedback
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="post()">
+              <span data-feather="layers"></span>
+              all posts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="report()">
+              <span data-feather="layers"></span>
+              reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="adTree()">
+              <span data-feather="layers"></span>
+              add trees
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goback()">
+              <span data-feather="layers"></span>
+              disconnect
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="btn-group left" role="group" aria-label="Basic example">
+      <button class="btn btn-secondary" (click)="silver()">
+        Silver weekly update
+      </button>
+      <button class="btn btn-warning" (click)="gold()">
+        Gold weekly update
+      </button>
+      <button class="btn btn-success" (click)="plat()">
+        Plat weekly update
+      </button>
+      <button class="btn btn-info" (click)="all()">Update All</button>
+    </div>
+    <div class="all">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Training</th>
+            <th scope="col">gold</th>
+            <th scope="col">plat</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let element of trainingCenters">
+          <tr>
+            {{ this.element?.name }} he is : {{this.element?.memberShip}}
+            <th>
+              <button
+                type="button"
+                class="btn btn-warning"
+                (click)="toGold(this.element?.name)"
+              >
+                Gold
+              </button>
+            </th>
+            <th>
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="toPlat(this.element?.name)"
+              >
+                plat
+              </button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

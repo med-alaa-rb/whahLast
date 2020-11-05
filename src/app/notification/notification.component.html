@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" (click)="backToProfile()">Profile</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="studentApply()"
+          >Notifications <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ownPosts()">Posts</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search..."
+        name="search"
+        #search
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        (click)="searchProfil(search.value)"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
+
+<p>student offert</p>
+<div class="companies-container">
+  <div class="card" style="width: 18rem;" *ngFor="let element of application">
+    <div class="card-body">
+      <h5 class="card-title">{{ this.element?.title }}</h5>
+      <p class="card-text">{{ this.element?.studentName }}</p>
+      <button (click)="reject(this.element?.id)">reject</button>
+      <button (click)="accept(this.element?.id , this.element?.studentName)">accept</button>
+
+    </div>
+  </div>
+</div>
